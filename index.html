@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>COUNTER</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <style>
+        button:nth-of-type(1) {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            font-size: 25px;
+        }
+
+        button:nth-of-type(2) {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            font-size: 25px;
+        }
+
+        body {
+            line-height: 100vh;
+            font-size: 50px;
+            text-align: center;
+            margin: 0;
+            background-color: lightsteelblue;
+            cursor: pointer;
+        }
+
+        span.counter {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+    <button>Add</button>
+    <button>Subtract</button>
+    <p>number of clicks: <span class="counter">0</span></p>
+</body>
+<script>
+    const spanCounter = document.querySelector("span.counter");
+    const buttonnAdd = document.querySelector('button:nth-of-type(1)');
+
+    let counter = 0;
+
+    // Add
+    buttonnAdd.addEventListener("click", function() {
+        counter++
+        spanCounter.textContent = counter;
+    })
+
+
+    // Subtract
+    const buttonSubtract = document.querySelector('button:nth-child(2)');
+    buttonSubtract.addEventListener("click", function() {
+        counter--
+        spanCounter.textContent = counter;
+    })
+
+</script>
+
+</html>
